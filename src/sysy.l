@@ -26,9 +26,10 @@ using namespace std;
 /* 对于 Bison, 这里可以定义终结符/非终结符的类型 */
 
 /* 空白符和注释 */
-LineComment   "//".*
-BlockComment   "/\*"[.\n]*"\*/"
-WhiteSpace    [ \t\n\r]*
+LineComment       "//".*
+BlockComment      "\/\*"[.\n]*"\*/"
+MultiLineComment  \/\*([^*]|(\*+[^*/]))*\*+\/
+WhiteSpace        [ \t\n\r]*
 
 /* 标识符 */
 Identifier    [a-zA-Z_][a-zA-Z0-9_]*
@@ -43,6 +44,7 @@ Hexadecimal   0[xX][0-9a-fA-F]+
 {WhiteSpace}    { /* 忽略, 不做任何操作 */ }
 {LineComment}   { /* 忽略, 不做任何操作 */ }
 {BlockComment}   { /* 忽略, 不做任何操作 */ }
+{MultiLineComment}   { /* 忽略, 不做任何操作 */ }
 
 "int"           { return INT; }
 "return"        { return RETURN; }
