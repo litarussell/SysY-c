@@ -1,7 +1,8 @@
 {
   "files.associations": {
     "*.js": "javascript",
-    "cstdio": "cpp"
+    "cstdio": "cpp",
+    "iostream": "cpp"
   },
   "editor.gotoLocation.alternativeDeclarationCommand": "editor.action.revealDefinition",
   "editor.gotoLocation.alternativeDefinitionCommand": "editor.action.revealDefinition",
